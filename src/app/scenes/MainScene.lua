@@ -5,6 +5,7 @@ end)
 
 function MainScene:ctor()
 	local layer = display.newColorLayer(cc.c4b(180, 180, 0, 255))
+	self.tickCount = 0
 	self:addChild(layer)
 
 	-- display.newTTFLabel({text = "Hello, World", size = 50})
@@ -17,10 +18,17 @@ function MainScene:onEnter()
 	-- self:showSprite()
 	-- self:showSpine()
 	-- self:showAnimation()
-	self:addTouchNode()
+	-- self:addTouchNode()
+	-- self:addNodeEventListener(cc.NODE_ENTER_FRAME_EVENT, handler(self, self.update))
+	-- self:scheduleUpdate()
+	-- self:scheduleTest()
 end
 
 function MainScene:onExit()
+end
+
+function MainScene:update(dt)
+	print('dt '..dt)
 end
 
 function MainScene:showSprite()
@@ -90,6 +98,20 @@ function MainScene:addTouchNode()
 	node:setTouchEnabled(true)
 	node.setTouchMode(cc.TOUCHES_ONE_BY_ONE)
 	node:addTo(self)
+end
+
+-- quick 扩展的 schedule 方法实际上是利用action来实现的，取消定时器调用 stopAction 即可
+function MainScene:scheduleTest()
+	self.tickCount = 0
+	local h = function()
+		if self.tickCount > 10 then
+			self:stopAction(self.handle)
+		else
+			print('tick  '..self.tickCount)
+			self.tickCount = self.tickCount + 1
+		end
+	end
+	self.handle = self:schedule(h, 1)
 end
 
 return MainScene
