@@ -1,0 +1,66 @@
+<Project fullMode="0">
+  <project-home>.</project-home>
+  <debug-options>
+    <start-program>.\simulator\win32\quicktest.exe</start-program>
+    <start-working-dir>..\quicktest</start-working-dir>
+    <start-command/>
+  </debug-options>
+  <exclude-files/>
+  <assets>
+    <item path="src\app\MyApp.lua" dflag="131076"/>
+    <item path="src\app\scenes\MainScene.lua" dflag="131076"/>
+    <item path="src\cocos\cocos2d\Cocos2d.lua" dflag="131076"/>
+    <item path="src\cocos\cocos2d\Cocos2dConstants.lua" dflag="131076"/>
+    <item path="src\cocos\cocos2d\Opengl.lua" dflag="131076"/>
+    <item path="src\cocos\cocos2d\OpenglConstants.lua" dflag="131076"/>
+    <item path="src\cocos\cocostudio\CocoStudio.lua" dflag="131076"/>
+    <item path="src\cocos\cocostudio\StudioConstants.lua" dflag="131076"/>
+    <item path="src\cocos\controller\ControllerConstants.lua" dflag="131076"/>
+    <item path="src\cocos\init.lua" dflag="131076"/>
+    <item path="src\cocos\network\NetworkConstants.lua" dflag="131076"/>
+    <item path="src\cocos\spine\SpineConstants.lua" dflag="131076"/>
+    <item path="src\cocos\ui\experimentalUIConstants.lua" dflag="131076"/>
+    <item path="src\cocos\ui\GuiConstants.lua" dflag="131076"/>
+    <item path="src\config.lua" dflag="131076"/>
+    <item path="src\framework\AppBase.lua" dflag="131076"/>
+    <item path="src\framework\audio.lua" dflag="131076"/>
+    <item path="src\framework\crypto.lua" dflag="131076"/>
+    <item path="src\framework\debug.lua" dflag="131076"/>
+    <item path="src\framework\device.lua" dflag="131076"/>
+    <item path="src\framework\display.lua" dflag="131076"/>
+    <item path="src\framework\functions.lua" dflag="131076"/>
+    <item path="src\framework\init.lua" dflag="131076"/>
+    <item path="src\framework\json.lua" dflag="131076"/>
+    <item path="src\framework\network.lua" dflag="131076"/>
+    <item path="src\framework\NodeEx.lua" dflag="131076"/>
+    <item path="src\framework\platform\android.lua" dflag="131076"/>
+    <item path="src\framework\platform\ios.lua" dflag="131076"/>
+    <item path="src\framework\platform\luaj.lua" dflag="131076"/>
+    <item path="src\framework\platform\luaoc.lua" dflag="131076"/>
+    <item path="src\framework\platform\mac.lua" dflag="131076"/>
+    <item path="src\framework\platform\Store.lua" dflag="131076"/>
+    <item path="src\framework\protobuf\containers.lua" dflag="131076"/>
+    <item path="src\framework\protobuf\decoder.lua" dflag="131076"/>
+    <item path="src\framework\protobuf\descriptor.lua" dflag="131076"/>
+    <item path="src\framework\protobuf\encoder.lua" dflag="131076"/>
+    <item path="src\framework\protobuf\listener.lua" dflag="131076"/>
+    <item path="src\framework\protobuf\protobuf.lua" dflag="131076"/>
+    <item path="src\framework\protobuf\text_format.lua" dflag="131076"/>
+    <item path="src\framework\protobuf\type_checkers.lua" dflag="131076"/>
+    <item path="src\framework\protobuf\wire_format.lua" dflag="131076"/>
+    <item path="src\framework\scheduler.lua" dflag="131076"/>
+    <item path="src\framework\shortcodes.lua" dflag="131076"/>
+    <item path="src\framework\SimpleTCP.lua" dflag="131076"/>
+    <item path="src\framework\toluaEx.lua" dflag="131076"/>
+    <item path="src\framework\WidgetEx.lua" dflag="131076"/>
+    <item path="src\main.lua" dflag="131076"/>
+    <item path="src\sproto.lua" dflag="131076"/>
+    <item path="src\sprotoparser.lua" dflag="131076"/>
+    <item path="res\readme.txt" dflag="131076"/>
+  </assets>
+  <inspect-dirs>
+    <item>src</item>
+    <item>res</item>
+  </inspect-dirs>
+</Project>
+

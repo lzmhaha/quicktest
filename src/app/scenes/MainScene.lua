@@ -1,0 +1,95 @@
+
+local MainScene = class("MainScene", function()
+    return display.newScene("MainScene")
+end)
+
+function MainScene:ctor()
+	local layer = display.newColorLayer(cc.c4b(180, 180, 0, 255))
+	self:addChild(layer)
+
+	-- display.newTTFLabel({text = "Hello, World", size = 50})
+	-- 	:align(display.CENTER, display.cx, display.cy)
+	-- 	:addTo(self)
+end
+
+function MainScene:onEnter()
+	-- self:readFile()
+	-- self:showSprite()
+	-- self:showSpine()
+	-- self:showAnimation()
+	self:addTouchNode()
+end
+
+function MainScene:onExit()
+end
+
+function MainScene:showSprite()
+	cc.Sprite:create('img/light.png'):center():addTo(self)
+end
+
+function MainScene:readFile()
+	local node = cc.Node:create()
+	local f = cc.FileUtils:getInstance()
+	local str = f:getStringFromFile('json/test.json')
+	local obj = json.decode(str)
+	for k, v in pairs(obj) do
+		print(k..v)
+	end
+end
+
+function MainScene:showSpine()
+	-- 读取json
+	-- local sp = sp.SkeletonAnimation:createWithJsonFile("spine/hero.json", "spine/hero.atlas")
+	-- 读取二进制文件
+	local hero = sp.SkeletonAnimation:createWithBinaryFile('spine/hero.skel', 'spine/hero.atlas')
+	hero:pos(200, 150):addTo(self)
+
+	-- 播放动画
+	hero:setAnimation(0, 'attack', true)
+	hero:setMix('attack', 'run', 0.5)
+	hero:addAnimation(0, 'run', true)
+
+	-- 事件监听一
+	-- hero:registerSpineEventHandler(function()
+	-- 	print('event')
+	-- end, sp.EventType.ANIMATION_COMPLETE)
+
+	-- 事件监听二
+	hero:registerSpineEventHandler(handler(self, MainScene._spineEventCall), sp.EventType.ANIMATION_COMPLETE)
+	
+end
+
+function MainScene:_spineEventCall(event)
+	-- print('-------------spine event call----------------')
+	-- print('animation: '..event.animation)
+	-- print('type: '..event.type)
+	-- print('track index: '..event.trackIndex)
+	-- print('loop count: '..event.loopCount)
+	-- print('-------------spine event call----------------')
+end
+
+function MainScene:showAnimation()
+	display.addSpriteFrames('img/dandan.plist', 'img/dandan.png')
+	local frames = display.newFrames('%03d.png', 1, 10)
+	local animation = display.newAnimation(frames, 0.1)
+	local animate = cc.Animate:create(animation)
+	local action = cc.RepeatForever:create(animate)
+	display.newSprite(display.newSpriteFrame('001.png')):addTo(self):center():runAction(action)
+end
+
+function MainScene:addTouchNode()
+	local node = display.newSprite('img/light.png'):center():pos(100, 100)
+	node:addNodeEventListener(cc.NODE_TOUCH_EVENT, function(event)
+		local dx = event.x - event.prevX
+		local dy = event.y - event.prevY
+		local x = node:getPositionX()
+		local y = node:getPositionY()
+		node:pos(x + dx, y + dy)
+		return true
+	end)
+	node:setTouchEnabled(true)
+	node.setTouchMode(cc.TOUCHES_ONE_BY_ONE)
+	node:addTo(self)
+end
+
+return MainScene
