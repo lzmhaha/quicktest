@@ -24,7 +24,8 @@ function MainScene:onEnter()
 	-- self:scheduleTest()
 	-- self:showListView()
 	-- self:showButton()
-	self:showLayout()
+	-- self:showLayout()
+	self:showTileMap()
 end
 
 function MainScene:onExit()
@@ -216,6 +217,25 @@ function MainScene:showLayout()
 	:center()
 	:align(display.CENTER)
 	:size(500, 500)
+end
+
+function MainScene:showTileMap()
+	local map = cc.TMXTiledMap:create('map/tiled.tmx')
+	map:pos(100, 10):addTo(self)
+
+	local layer = map:getLayer('shadow')
+	layer:setTileGID(1, cc.p(1, 30))
+
+	-- 获取图块节点坐标
+	local pos = layer:getPositionAt(cc.p(1, 30))
+	print(string.format('x: %f, y: %f', pos.x, pos.y))
+
+	-- 获取图块
+	local tile = layer:getTileAt(cc.p(1, 30)):scale(0.5)
+
+	-- 获取自定义属性
+	print(layer:getProperty('testKey'))
+
 end
 
 return MainScene

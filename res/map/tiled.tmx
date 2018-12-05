@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" tiledversion="1.1.5" orientation="orthogonal" renderorder="right-down" width="36" height="35" tilewidth="50" tileheight="50" infinite="0" nextobjectid="1">
+ <tileset firstgid="1" name="box" tilewidth="50" tileheight="91" tilecount="14" columns="7">
+  <image source="box.png" width="350" height="182"/>
+ </tileset>
+ <layer name="ground" width="36" height="35">
+  <data encoding="base64" compression="zlib">
+   eJztzqEBAAAMAiC7//+7M2Yg0GmSAgAAAMCzDBwWHIY7Nho=
+  </data>
+ </layer>
+ <layer name="shadow" width="36" height="35">
+  <properties>
+   <property name="testKey" value="testValue"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJztlsEKgDAMQ3fQedH//131IBTBLclWmdjAbs0zOIlNidcqeBjucpwMnlMbyFe5KP8SOq9yWR/LZ+cZ35TwO5hfyOOpyFPW3/KwvanmQXpO4Y7ah1bIO1buF+Xafis9y94R0nO9uE++1m9e5UYeH19NkceH+5U8Vso+z3BrnYR2210MNxvuaP+v2Of75fFU5Cnrb3lin+8zp863+hAu02/qPs9wdy6UB9M=
+  </data>
+ </layer>
+ <layer name="obstacles" width="36" height="35">
+  <data encoding="base64" compression="zlib">
+   eJztlkEKwDAIBPX/n+61SLFR12JlB3IpqwwJMVUR0eA6IdpTb3URIj6Zvht8kOda9emCPj708dlyvybOH2TO5k/2GPF+ZTJeXYVsX/r01L1Bn56+9Hn+NmkeTnwvMnWonM3//X+jC/r40Mdny/2aOH+QOZuP7H/l/UKf71dcyxgA3Q==
+  </data>
+ </layer>
+ <layer name="barrier" width="36" height="35">
+  <data encoding="base64" compression="zlib">
+   eJzt1rEJADAIAEHL7D9xRogGRIQ7sIyF3yQCYIdTGHq8bvzTIfNGXwCA/fzn53U0qOzUN+8Ch3MB6Q==
+  </data>
+ </layer>
+</map>
