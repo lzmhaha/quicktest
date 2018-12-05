@@ -4,9 +4,9 @@ local MainScene = class("MainScene", function()
 end)
 
 function MainScene:ctor()
-	local layer = display.newColorLayer(cc.c4b(180, 180, 0, 255))
-	self.tickCount = 0
-	self:addChild(layer)
+	-- local layer = display.newColorLayer(cc.c4b(180, 180, 0, 255))
+	-- self.tickCount = 0
+	-- self:addChild(layer)
 
 	-- display.newTTFLabel({text = "Hello, World", size = 50})
 	-- 	:align(display.CENTER, display.cx, display.cy)
@@ -23,9 +23,10 @@ function MainScene:onEnter()
 	-- self:scheduleUpdate()
 	-- self:scheduleTest()
 	-- self:showListView()
-	-- self:showButton()
+	self:showButton()
 	-- self:showLayout()
 	self:showTileMap()
+	self:cameraTest()
 end
 
 function MainScene:onExit()
@@ -236,6 +237,15 @@ function MainScene:showTileMap()
 	-- 获取自定义属性
 	print(layer:getProperty('testKey'))
 
+	map:setCameraMask(cc.CameraFlag.USER1)
+
+end
+
+function MainScene:cameraTest()
+	local camera = cc.Camera:create()
+	camera:addTo(self):pos(0, 100)
+	camera:setCameraFlag(cc.CameraFlag.USER1)
+	camera:moveBy(10, 1000, 1000)
 end
 
 return MainScene
