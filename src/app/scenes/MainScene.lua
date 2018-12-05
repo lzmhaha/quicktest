@@ -17,11 +17,12 @@ function MainScene:onEnter()
 	-- self:readFile()
 	-- self:showSprite()
 	-- self:showSpine()
-	self:showAnimation()
+	-- self:showAnimation()
 	-- self:addTouchNode()
 	-- self:addNodeEventListener(cc.NODE_ENTER_FRAME_EVENT, handler(self, self.update))
 	-- self:scheduleUpdate()
 	-- self:scheduleTest()
+	self:showListView()
 end
 
 function MainScene:onExit()
@@ -117,6 +118,41 @@ function MainScene:scheduleTest()
 		end
 	end
 	self.handle = self:schedule(h, 1)
+end
+
+function MainScene:showListView()
+	local lv = ccui.ListView:create()
+	lv:center():addTo(self)
+		:size(120, 200)
+	-- 间隔
+	lv:setItemsMargin(5)
+	-- 背景颜色
+	lv:setBackGroundColor(cc.c3b(0, 0, 255))
+	lv:setBackGroundColorType(ccui.LayoutBackGroundColorType.solid)
+
+	-- 滑动到最底部
+	-- lv:performWithDelay(function()
+	-- 	lv:scrollToBottom(0.2, true)
+	-- 	-- lv:jumpToBottom()
+	-- end, 1)
+
+	-- 反弹
+	lv:setBounceEnabled(true)
+	-- 惯性
+	lv:setInertiaScrollEnabled(true)
+
+	-- 方向 默认为 纵向
+	-- lv:setDirection(ccui.ListViewDirection.horizontal)
+	-- lv:setDirection(ccui.ListViewDirection.horizontal)
+
+	local item = ccui.Layout:create()
+	item:setBackGroundColorType(ccui.LayoutBackGroundColorType.solid)
+	item:setBackGroundColor(cc.c3b(255, 0, 0))
+	item:setContentSize(100, 50)
+	lv:setItemModel(item)
+	for i = 1, 10 do
+		lv:pushBackDefaultItem()
+	end
 end
 
 return MainScene

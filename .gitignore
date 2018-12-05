@@ -1,2 +1,4 @@
 frameworks
 Resources
+.vscode
+src/debug.log
