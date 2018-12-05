@@ -22,7 +22,8 @@ function MainScene:onEnter()
 	-- self:addNodeEventListener(cc.NODE_ENTER_FRAME_EVENT, handler(self, self.update))
 	-- self:scheduleUpdate()
 	-- self:scheduleTest()
-	self:showListView()
+	-- self:showListView()
+	self:showButton()
 end
 
 function MainScene:onExit()
@@ -153,6 +154,30 @@ function MainScene:showListView()
 	for i = 1, 10 do
 		lv:pushBackDefaultItem()
 	end
+end
+
+function MainScene:showButton()
+	local btn = ccui.Button:create('img/button_01.png', 'img/button_02.png', 'img/button_03.png', ccui.TextureResType.localType)
+
+	-- addClickEventListener 无效
+	-- btn:addClickEventListener(function(btn)
+	-- 	print('on click')
+	-- end)
+
+	btn:addTouchEventListener(function(btn, eventType)
+		if eventType == cc.EventCode.ENDED then
+			btn:setEnabled(false)
+			print('on click')
+		end
+	end)
+
+	-- 无效按钮
+	-- btn:setEnabled(false)
+
+	btn:setScale9Enabled(true)
+	-- btn:size(100, 100)
+
+	btn:center():addTo(self)
 end
 
 return MainScene
