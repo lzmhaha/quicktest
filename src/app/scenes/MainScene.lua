@@ -23,7 +23,8 @@ function MainScene:onEnter()
 	-- self:scheduleUpdate()
 	-- self:scheduleTest()
 	-- self:showListView()
-	self:showButton()
+	-- self:showButton()
+	self:showLayout()
 end
 
 function MainScene:onExit()
@@ -177,7 +178,44 @@ function MainScene:showButton()
 	btn:setScale9Enabled(true)
 	-- btn:size(100, 100)
 
+	-- 点击缩放
+	btn:setZoomScale(-0.1)
+
+	-- 缩放动画
+	btn:setPressedActionEnabled(true)
+
 	btn:center():addTo(self)
+end
+
+function MainScene:showLayout()
+
+	local layout = ccui.Layout:create()
+	layout:setBackGroundColor(cc.c3b(255,255,255,255), cc.c3b(0,0,0,255))
+	layout:setBackGroundColorType(ccui.LayoutBackGroundColorType.gradient)
+	layout:setBackGroundColorVector(cc.p(-1, -1))
+
+	layout:setLayoutType(ccui.LayoutType.VERTICAL)
+
+	for i = 1, 5 do
+		local b = ccui.Button:create('img/button_01.png');
+		-- 点击缩放
+		b:setZoomScale(-0.1)
+
+		-- 缩放动画
+		b:setPressedActionEnabled(true)
+
+		local p = ccui.LinearLayoutParameter:create()
+		p:setGravity(ccui.LinearGravity.centerHorizontal)
+		p:setMargin({top = 10, left = 5})
+
+		b:setLayoutParameter(p)
+		b:addTo(layout)
+	end
+
+	layout:addTo(self)
+	:center()
+	:align(display.CENTER)
+	:size(500, 500)
 end
 
 return MainScene
