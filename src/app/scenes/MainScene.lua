@@ -23,11 +23,11 @@ function MainScene:onEnter()
 	-- self:scheduleUpdate()
 	-- self:scheduleTest()
 	-- self:showListView()
-	-- self:showButton()
 	-- self:showLayout()
 	-- self:showTileMap()
 	-- self:cameraTest()
 	self:shaderTest()
+	self:showButton()
 end
 
 function MainScene:onExit()
@@ -170,7 +170,8 @@ function MainScene:showButton()
 
 	btn:addTouchEventListener(function(btn, eventType)
 		if eventType == cc.EventCode.ENDED then
-			btn:setEnabled(false)
+			-- btn:setEnabled(false)
+			self:playAudio('audios/water.ogg')
 			print('on click')
 		end
 	end)
@@ -252,6 +253,15 @@ end
 function MainScene:shaderTest()
 	local sprite = require('app.views.ShaderTest'):new()
 	sprite:center():addTo(self)
+end
+
+function MainScene:playAudio(path)
+	audio.loadFile(path, function(path, success)
+		if success then
+			local s = audio.playEffect(path, false)
+			-- s:stop()
+		end
+	end)
 end
 
 return MainScene
