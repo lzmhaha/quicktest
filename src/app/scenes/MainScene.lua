@@ -23,10 +23,11 @@ function MainScene:onEnter()
 	-- self:scheduleUpdate()
 	-- self:scheduleTest()
 	-- self:showListView()
-	self:showButton()
+	-- self:showButton()
 	-- self:showLayout()
-	self:showTileMap()
-	self:cameraTest()
+	-- self:showTileMap()
+	-- self:cameraTest()
+	self:shaderTest()
 end
 
 function MainScene:onExit()
@@ -246,6 +247,11 @@ function MainScene:cameraTest()
 	camera:addTo(self):pos(0, 100)
 	camera:setCameraFlag(cc.CameraFlag.USER1)
 	camera:moveBy(10, 1000, 1000)
+end
+
+function MainScene:shaderTest()
+	local sprite = require('app.views.ShaderTest'):new()
+	sprite:center():addTo(self)
 end
 
 return MainScene
