@@ -26,8 +26,9 @@ function MainScene:onEnter()
 	-- self:showLayout()
 	-- self:showTileMap()
 	-- self:cameraTest()
-	self:shaderTest()
-	self:showButton()
+	-- self:shaderTest()
+	-- self:showButton()
+	self:addMulTouchNode()
 end
 
 function MainScene:onExit()
@@ -262,6 +263,45 @@ function MainScene:playAudio(path)
 			-- s:stop()
 		end
 	end)
+end
+
+-- 多点触摸 移动 + 缩放
+function MainScene:addMulTouchNode()
+	local node = display.newSprite('img/card.png'):center():addTo(self)
+
+	node:addNodeEventListener(cc.NODE_TOUCH_EVENT, function(event)
+		local points = event.points
+		local num = 0
+		local dx = 0
+		local dy = 0
+		local scale
+		local firstPoint
+		for id, point in pairs(points) do
+			dx = dx + (point.x - point.prevX)
+			dy = dy + (point.y - point.prevY)
+			num = num + 1
+			if num == 1 then
+				firstPoint = point
+			elseif num == 2 then
+				dis1 = cc.pGetDistance(firstPoint, point)
+				dis2 = cc.pGetDistance(cc.p(firstPoint.prevX, firstPoint.prevY), cc.p(point.prevX, point.prevY))
+				scale = dis1 / dis2
+				dx = dx * 0.5
+				dy = dy * 0.5
+				break
+			end
+		end
+		local x, y = node:getPosition()
+		node:pos(x + dx, y + dy)
+		if scale then
+			scale = node:getScale() * scale
+			if scale > 5 then scale = 5 end
+			if scale < 0.2  then scale = 0.2 end
+			node:scale(scale)
+		end
+	end)
+	node:setTouchMode(cc.TOUCH_MODE_ALL_AT_ONCE)
+	node:setTouchEnabled(true)
 end
 
 return MainScene
