@@ -4,8 +4,8 @@
 		"object": {
 			"node": {
 				"contentSize": {
-					"width": 0,
-					"height": 0
+					"w": 0,
+					"h": 0
 				},
 				"enabled": true,
 				"anchorPoint": {
@@ -27,8 +27,8 @@
 			{
 				"object": {
 					"contentSize": {
-						"width": 960,
-						"height": 540
+						"w": 960,
+						"h": 540
 					},
 					"enabled": true,
 					"name": "Canvas",
@@ -59,8 +59,8 @@
 						"object": {
 							"node": {
 								"contentSize": {
-									"width": 960,
-									"height": 540
+									"w": 960,
+									"h": 540
 								},
 								"enabled": true,
 								"name": "bg",
@@ -99,8 +99,8 @@
 						"object": {
 							"node": {
 								"contentSize": {
-									"width": 218,
-									"height": 340
+									"w": 218,
+									"h": 340
 								},
 								"enabled": true,
 								"name": "layout",
@@ -138,8 +138,8 @@
 								"object": {
 									"node": {
 										"contentSize": {
-											"width": 198,
-											"height": 100
+											"w": 198,
+											"h": 100
 										},
 										"enabled": true,
 										"name": "item",
@@ -178,8 +178,8 @@
 								"object": {
 									"node": {
 										"contentSize": {
-											"width": 198,
-											"height": 100
+											"w": 198,
+											"h": 100
 										},
 										"enabled": true,
 										"name": "item",
@@ -218,8 +218,8 @@
 								"object": {
 									"node": {
 										"contentSize": {
-											"width": 198,
-											"height": 100
+											"w": 198,
+											"h": 100
 										},
 										"enabled": true,
 										"name": "item",

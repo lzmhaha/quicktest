@@ -34,7 +34,7 @@ local function parseNode(obj, node)
 		obj:setColor(node.color)
 	end
 	if node.contentSize then
-		obj:setContentSize(node.contentSize)
+		obj:setContentSize(node.contentSize.w, node.contentSize.h)
 	end
 	obj:setVisible(node.enabled)
 	if node.globalZOrder then
