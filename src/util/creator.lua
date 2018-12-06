@@ -17,8 +17,10 @@ local function loadFrames(spriteFrames)
 			info.originalSize
 		)
 		-- XXX: info.centerRect is not use in Quick
-		-- info.centerRect.width = info.centerRect.w
-		-- info.centerRect.height = info.centerRect.h
+		info.centerRect.width = info.centerRect.w
+		info.centerRect.height = info.centerRect.h
+		frame['capinsets'] = info.centerRect
+
 		if frame then
 			spriteFrameCache:addSpriteFrame(frame, info.name)
 			print("Added frame:" .. info.name)
@@ -88,6 +90,7 @@ local nodeFactory = {
 			local sf = spriteFrameCache:getSpriteFrame(object.spriteFrameName)
 			-- local rect = sf:getRect()
 			sprite = ccui.Scale9Sprite:createWithSpriteFrame(sf)
+			sprite:setCapInsets(sf['capinsets'])
 			-- sprite = ccui.Scale9Sprite:create('creator/imgage/'..object.spriteFrameName)
 		else
 			sprite = cc.Sprite:createWithSpriteFrameName(object.spriteFrameName)
@@ -100,8 +103,13 @@ local nodeFactory = {
 		return parseNode(node, object.node)
 	end,
 	Button = function(object)
-		local btn = ccui.Button:create(object.spriteFrameName, object.pressedSpriteFrameName,
-			object.disabledSpriteFrameName, 1)
+		local btn = ccui.Button:create(object.spriteFrameName, object.pressedSpriteFrameName or object.spriteFrameName,
+			object.disabledSpriteFrameName or object.spriteFrameName, 1)
+		btn:setScale9Enabled(true)
+		if object.zoomScale then
+			btn:setPressedActionEnabled(true)
+			btn:setZoomScale(object.zoomScale - 1)
+		end
 		return parseNode(btn, object.node)
 	end,
 	Label = function(object)

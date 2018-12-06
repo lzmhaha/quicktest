@@ -57,6 +57,38 @@
 				"children": [
 					{
 						"object": {
+							"contentSize": {
+								"w": 0,
+								"h": 0
+							},
+							"enabled": true,
+							"name": "Main Camera",
+							"anchorPoint": {
+								"x": 0.5,
+								"y": 0.5
+							},
+							"color": {
+								"r": 255,
+								"g": 255,
+								"b": 255
+							},
+							"opacity": 255,
+							"position": {
+								"x": 0,
+								"y": 0
+							},
+							"rotationSkewX": 0,
+							"rotationSkewY": 0,
+							"skewX": 0,
+							"skewY": 0,
+							"groupIndex": 0,
+							"colliders": []
+						},
+						"object_type": "Node",
+						"children": []
+					},
+					{
+						"object": {
 							"node": {
 								"contentSize": {
 									"w": 960,
@@ -164,14 +196,12 @@
 										"groupIndex": 0,
 										"colliders": []
 									},
+									"ignoreContentAdaptWithSize": false,
 									"spriteFrameName": "image/default_sprite_splash.png",
-									"spriteType": "Sliced",
-									"srcBlend": 770,
-									"dstBlend": 771,
-									"trimEnabled": true,
-									"sizeMode": "Custom"
+									"transition": 3,
+									"zoomScale": 0.9
 								},
-								"object_type": "Sprite",
+								"object_type": "Button",
 								"children": []
 							},
 							{
@@ -204,14 +234,12 @@
 										"groupIndex": 0,
 										"colliders": []
 									},
+									"ignoreContentAdaptWithSize": false,
 									"spriteFrameName": "image/default_sprite_splash.png",
-									"spriteType": "Sliced",
-									"srcBlend": 770,
-									"dstBlend": 771,
-									"trimEnabled": true,
-									"sizeMode": "Custom"
+									"transition": 3,
+									"zoomScale": 0.9
 								},
-								"object_type": "Sprite",
+								"object_type": "Button",
 								"children": []
 							},
 							{
@@ -244,14 +272,12 @@
 										"groupIndex": 0,
 										"colliders": []
 									},
+									"ignoreContentAdaptWithSize": false,
 									"spriteFrameName": "image/default_sprite_splash.png",
-									"spriteType": "Sliced",
-									"srcBlend": 770,
-									"dstBlend": 771,
-									"trimEnabled": true,
-									"sizeMode": "Custom"
+									"transition": 3,
+									"zoomScale": 0.9
 								},
-								"object_type": "Sprite",
+								"object_type": "Button",
 								"children": []
 							}
 						]
