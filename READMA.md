@@ -9,3 +9,4 @@ end
 
 ### creator-to-quick 项目地址
 https://github.com/u0u0/creator_to_quick.git
+目前功能比较鸡肋
