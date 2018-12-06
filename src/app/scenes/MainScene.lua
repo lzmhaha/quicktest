@@ -23,12 +23,12 @@ function MainScene:onEnter()
 	-- self:scheduleUpdate()
 	-- self:scheduleTest()
 	-- self:showListView()
-	-- self:showLayout()
+	self:showLayout()
 	-- self:showTileMap()
 	-- self:cameraTest()
 	-- self:shaderTest()
 	-- self:showButton()
-	self:addMulTouchNode()
+	-- self:addMulTouchNode()
 end
 
 function MainScene:onExit()
@@ -194,12 +194,14 @@ end
 
 function MainScene:showLayout()
 
-	local layout = ccui.Layout:create()
+	local layout = require('app.views.AutoLayout'):new()
 	layout:setBackGroundColor(cc.c3b(255,255,255,255), cc.c3b(0,0,0,255))
 	layout:setBackGroundColorType(ccui.LayoutBackGroundColorType.gradient)
 	layout:setBackGroundColorVector(cc.p(-1, -1))
 
 	layout:setLayoutType(ccui.LayoutType.VERTICAL)
+
+	layout:size(300, 100)
 
 	for i = 1, 5 do
 		local b = ccui.Button:create('img/button_01.png');
@@ -211,16 +213,16 @@ function MainScene:showLayout()
 
 		local p = ccui.LinearLayoutParameter:create()
 		p:setGravity(ccui.LinearGravity.centerHorizontal)
-		p:setMargin({top = 10, left = 5})
+		p:setMargin({top = 10, bottom = 10, left = 5, right = 5})
 
 		b:setLayoutParameter(p)
-		b:addTo(layout)
+
+		layout:addChildAndResize(b, 100 - i)
 	end
 
 	layout:addTo(self)
 	:center()
 	:align(display.CENTER)
-	:size(500, 500)
 end
 
 function MainScene:showTileMap()
