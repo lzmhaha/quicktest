@@ -274,8 +274,11 @@ function MainScene:addMulTouchNode()
 		local num = 0
 		local dx = 0
 		local dy = 0
+		local curScale = node:getScale()
 		local scale
 		local firstPoint
+		local x, y = node:getPosition()
+
 		for id, point in pairs(points) do
 			dx = dx + (point.x - point.prevX)
 			dy = dy + (point.y - point.prevY)
@@ -283,22 +286,26 @@ function MainScene:addMulTouchNode()
 			if num == 1 then
 				firstPoint = point
 			elseif num == 2 then
-				dis1 = cc.pGetDistance(firstPoint, point)
-				dis2 = cc.pGetDistance(cc.p(firstPoint.prevX, firstPoint.prevY), cc.p(point.prevX, point.prevY))
-				scale = dis1 / dis2
 				dx = dx * 0.5
 				dy = dy * 0.5
+
+				local dis1 = cc.pGetDistance(firstPoint, point)
+				local dis2 = cc.pGetDistance(cc.p(firstPoint.prevX, firstPoint.prevY), cc.p(point.prevX, point.prevY))
+				scale = dis1 / dis2
+				if scale * curScale > 5 then scale = 5 / curScale end
+				if scale * curScale < 0.2  then scale = 0.2 / curScale end
+
+				-- 计算锚点偏移
+				local center = cc.pMidpoint(cc.p(firstPoint.prevX, firstPoint.prevY), cc.p(point.prevX, point.prevY))
+				dx = dx + (x - center.x) * (scale - 1)
+				dy = dy + (y - center.y) * (scale - 1)
+
 				break
 			end
 		end
-		local x, y = node:getPosition()
+
 		node:pos(x + dx, y + dy)
-		if scale then
-			scale = node:getScale() * scale
-			if scale > 5 then scale = 5 end
-			if scale < 0.2  then scale = 0.2 end
-			node:scale(scale)
-		end
+		if scale then node:scale(scale * curScale) end
 	end)
 	node:setTouchMode(cc.TOUCH_MODE_ALL_AT_ONCE)
 	node:setTouchEnabled(true)
