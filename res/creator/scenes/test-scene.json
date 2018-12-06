@@ -1,0 +1,174 @@
+{
+	"version": "0.4.0",
+	"root": {
+		"object": {
+			"node": {
+				"contentSize": {
+					"w": 0,
+					"h": 0
+				},
+				"enabled": true,
+				"anchorPoint": {
+					"x": 0,
+					"y": 0
+				},
+				"color": {
+					"r": 255,
+					"g": 255,
+					"b": 255
+				},
+				"opacity": 255,
+				"groupIndex": 0,
+				"colliders": []
+			}
+		},
+		"object_type": "Scene",
+		"children": [
+			{
+				"object": {
+					"contentSize": {
+						"w": 960,
+						"h": 640
+					},
+					"enabled": true,
+					"name": "Canvas",
+					"anchorPoint": {
+						"x": 0.5,
+						"y": 0.5
+					},
+					"color": {
+						"r": 255,
+						"g": 255,
+						"b": 255
+					},
+					"opacity": 255,
+					"position": {
+						"x": 480,
+						"y": 320
+					},
+					"rotationSkewX": 0,
+					"rotationSkewY": 0,
+					"skewX": 0,
+					"skewY": 0,
+					"groupIndex": 0,
+					"colliders": []
+				},
+				"object_type": "Node",
+				"children": [
+					{
+						"object": {
+							"contentSize": {
+								"w": 0,
+								"h": 0
+							},
+							"enabled": true,
+							"name": "Main Camera",
+							"anchorPoint": {
+								"x": 0.5,
+								"y": 0.5
+							},
+							"color": {
+								"r": 255,
+								"g": 255,
+								"b": 255
+							},
+							"opacity": 255,
+							"position": {
+								"x": 0,
+								"y": 0
+							},
+							"rotationSkewX": 0,
+							"rotationSkewY": 0,
+							"skewX": 0,
+							"skewY": 0,
+							"groupIndex": 0,
+							"colliders": []
+						},
+						"object_type": "Node",
+						"children": []
+					},
+					{
+						"object": {
+							"node": {
+								"contentSize": {
+									"w": 100,
+									"h": 100
+								},
+								"enabled": true,
+								"name": "sprite_splash",
+								"anchorPoint": {
+									"x": 0.5,
+									"y": 0.5
+								},
+								"color": {
+									"r": 255,
+									"g": 255,
+									"b": 255
+								},
+								"opacity": 255,
+								"position": {
+									"x": 23,
+									"y": 12
+								},
+								"rotationSkewX": 0,
+								"rotationSkewY": 0,
+								"skewX": 0,
+								"skewY": 0,
+								"groupIndex": 0,
+								"colliders": []
+							},
+							"spriteFrameName": "image/default_sprite_splash.png",
+							"spriteType": "Simple",
+							"srcBlend": 770,
+							"dstBlend": 771,
+							"trimEnabled": true,
+							"sizeMode": "Custom"
+						},
+						"object_type": "Sprite",
+						"children": []
+					}
+				]
+			}
+		]
+	},
+	"designResolution": {
+		"w": 960,
+		"h": 640
+	},
+	"resolutionFitWidth": false,
+	"resolutionFitHeight": true,
+	"spriteFrames": [
+		{
+			"name": "image/default_sprite_splash.png",
+			"texturePath": "creator/image/default_sprite_splash.png",
+			"rect": {
+				"x": 0,
+				"y": 0,
+				"w": 2,
+				"h": 2
+			},
+			"offset": {
+				"x": 0,
+				"y": 0
+			},
+			"rotated": false,
+			"originalSize": {
+				"w": 2,
+				"h": 2
+			},
+			"centerRect": {
+				"x": 0,
+				"y": 0,
+				"w": 2,
+				"h": 2
+			}
+		}
+	],
+	"collisionMatrix": [
+		{
+			"value": [
+				true
+			]
+		}
+	]
+}
