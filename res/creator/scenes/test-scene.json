@@ -4,8 +4,8 @@
 		"object": {
 			"node": {
 				"contentSize": {
-					"w": 0,
-					"h": 0
+					"width": 0,
+					"height": 0
 				},
 				"enabled": true,
 				"anchorPoint": {
@@ -27,8 +27,8 @@
 			{
 				"object": {
 					"contentSize": {
-						"w": 960,
-						"h": 640
+						"width": 960,
+						"height": 540
 					},
 					"enabled": true,
 					"name": "Canvas",
@@ -44,7 +44,7 @@
 					"opacity": 255,
 					"position": {
 						"x": 480,
-						"y": 320
+						"y": 270
 					},
 					"rotationSkewX": 0,
 					"rotationSkewY": 0,
@@ -57,58 +57,26 @@
 				"children": [
 					{
 						"object": {
-							"contentSize": {
-								"w": 0,
-								"h": 0
-							},
-							"enabled": true,
-							"name": "Main Camera",
-							"anchorPoint": {
-								"x": 0.5,
-								"y": 0.5
-							},
-							"color": {
-								"r": 255,
-								"g": 255,
-								"b": 255
-							},
-							"opacity": 255,
-							"position": {
-								"x": 0,
-								"y": 0
-							},
-							"rotationSkewX": 0,
-							"rotationSkewY": 0,
-							"skewX": 0,
-							"skewY": 0,
-							"groupIndex": 0,
-							"colliders": []
-						},
-						"object_type": "Node",
-						"children": []
-					},
-					{
-						"object": {
 							"node": {
 								"contentSize": {
-									"w": 100,
-									"h": 100
+									"width": 960,
+									"height": 540
 								},
 								"enabled": true,
-								"name": "sprite_splash",
+								"name": "bg",
 								"anchorPoint": {
 									"x": 0.5,
 									"y": 0.5
 								},
 								"color": {
-									"r": 255,
-									"g": 255,
-									"b": 255
+									"r": 133,
+									"g": 133,
+									"b": 133
 								},
 								"opacity": 255,
 								"position": {
-									"x": 23,
-									"y": 12
+									"x": 0,
+									"y": 0
 								},
 								"rotationSkewX": 0,
 								"rotationSkewY": 0,
@@ -118,7 +86,7 @@
 								"colliders": []
 							},
 							"spriteFrameName": "image/default_sprite_splash.png",
-							"spriteType": "Simple",
+							"spriteType": "Sliced",
 							"srcBlend": 770,
 							"dstBlend": 771,
 							"trimEnabled": true,
@@ -126,6 +94,167 @@
 						},
 						"object_type": "Sprite",
 						"children": []
+					},
+					{
+						"object": {
+							"node": {
+								"contentSize": {
+									"width": 218,
+									"height": 340
+								},
+								"enabled": true,
+								"name": "layout",
+								"anchorPoint": {
+									"x": 1,
+									"y": 0
+								},
+								"color": {
+									"r": 255,
+									"g": 255,
+									"b": 255
+								},
+								"opacity": 255,
+								"position": {
+									"x": 430,
+									"y": -220
+								},
+								"rotationSkewX": 0,
+								"rotationSkewY": 0,
+								"skewX": 0,
+								"skewY": 0,
+								"groupIndex": 0,
+								"colliders": []
+							},
+							"spriteFrameName": "image/default_sprite_splash.png",
+							"spriteType": "Sliced",
+							"srcBlend": 770,
+							"dstBlend": 771,
+							"trimEnabled": true,
+							"sizeMode": "Custom"
+						},
+						"object_type": "Sprite",
+						"children": [
+							{
+								"object": {
+									"node": {
+										"contentSize": {
+											"width": 198,
+											"height": 100
+										},
+										"enabled": true,
+										"name": "item",
+										"anchorPoint": {
+											"x": 0.5,
+											"y": 0.5
+										},
+										"color": {
+											"r": 74,
+											"g": 74,
+											"b": 74
+										},
+										"opacity": 255,
+										"position": {
+											"x": -109,
+											"y": 280
+										},
+										"rotationSkewX": 0,
+										"rotationSkewY": 0,
+										"skewX": 0,
+										"skewY": 0,
+										"groupIndex": 0,
+										"colliders": []
+									},
+									"spriteFrameName": "image/default_sprite_splash.png",
+									"spriteType": "Sliced",
+									"srcBlend": 770,
+									"dstBlend": 771,
+									"trimEnabled": true,
+									"sizeMode": "Custom"
+								},
+								"object_type": "Sprite",
+								"children": []
+							},
+							{
+								"object": {
+									"node": {
+										"contentSize": {
+											"width": 198,
+											"height": 100
+										},
+										"enabled": true,
+										"name": "item",
+										"anchorPoint": {
+											"x": 0.5,
+											"y": 0.5
+										},
+										"color": {
+											"r": 74,
+											"g": 74,
+											"b": 74
+										},
+										"opacity": 255,
+										"position": {
+											"x": -109,
+											"y": 170
+										},
+										"rotationSkewX": 0,
+										"rotationSkewY": 0,
+										"skewX": 0,
+										"skewY": 0,
+										"groupIndex": 0,
+										"colliders": []
+									},
+									"spriteFrameName": "image/default_sprite_splash.png",
+									"spriteType": "Sliced",
+									"srcBlend": 770,
+									"dstBlend": 771,
+									"trimEnabled": true,
+									"sizeMode": "Custom"
+								},
+								"object_type": "Sprite",
+								"children": []
+							},
+							{
+								"object": {
+									"node": {
+										"contentSize": {
+											"width": 198,
+											"height": 100
+										},
+										"enabled": true,
+										"name": "item",
+										"anchorPoint": {
+											"x": 0.5,
+											"y": 0.5
+										},
+										"color": {
+											"r": 74,
+											"g": 74,
+											"b": 74
+										},
+										"opacity": 255,
+										"position": {
+											"x": -109,
+											"y": 60
+										},
+										"rotationSkewX": 0,
+										"rotationSkewY": 0,
+										"skewX": 0,
+										"skewY": 0,
+										"groupIndex": 0,
+										"colliders": []
+									},
+									"spriteFrameName": "image/default_sprite_splash.png",
+									"spriteType": "Sliced",
+									"srcBlend": 770,
+									"dstBlend": 771,
+									"trimEnabled": true,
+									"sizeMode": "Custom"
+								},
+								"object_type": "Sprite",
+								"children": []
+							}
+						]
 					}
 				]
 			}
@@ -133,7 +262,7 @@
 	},
 	"designResolution": {
 		"w": 960,
-		"h": 640
+		"h": 540
 	},
 	"resolutionFitWidth": false,
 	"resolutionFitHeight": true,
