@@ -15,8 +15,10 @@ void main()
 	// }
 
     // 反相
-    gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0) - texture2D(CC_Texture0, v_texCoord);
-    gl_FragColor *= 0.5;
-    
-    // gl_FragColor = texture2D(CC_Texture0, v_texCoord) * 0.4;
+    vec4 color = texture2D(CC_Texture0, v_texCoord);
+	// 用min函数是避免alpha值不起作用
+	color.r = min(1.0 - color.r, color.a);
+	color.g = min(1.0 - color.g, color.a);
+	color.b = min(1.0 - color.b, color.a);
+	gl_FragColor = color;
 }
